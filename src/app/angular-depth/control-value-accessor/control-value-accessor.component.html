@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+  <thd-quantity formControlName="quantity"></thd-quantity>
+
+  <h2>ControlValueAccessor Component:</h2>
+  <p>Quantity: {{ form.controls['quantity'].value }}</p>
+  <p>Touched: {{ form.controls['quantity'].touched }}</p>
+</form>

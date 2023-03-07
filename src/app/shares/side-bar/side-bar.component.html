@@ -1,0 +1,52 @@
+<div class="sidebar-container"
+  [ngClass]="sidebarOpened ? 'open' : 'hidden'"
+  thdClickOutside
+  (clickOutside)="closeSideBar()">
+  <div class="dock">
+    <div class="dock-user-section">
+      <div class="user-logo">
+        <img class="user-icon" src="assets/images/sidebar/user-profile.svg"
+          alt="user">
+      </div>
+    </div>
+
+    <div class="dock-toggle-section">
+      <div class="menu-wrap">
+        <img class="menu-icon" src="assets/images/sidebar/burger.svg"
+          (click)="toggleSidebar()" alt="user">
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer"
+    [ngClass]="sidebarOpened ? 'drawer-open' : 'drawer-hidden'">
+    <div class="drawer-user-section">
+      <h2 class="mt-2">Hello world!</h2>
+    </div>
+
+    <div class="drawer-toggle-section">
+      &nbsp;
+    </div>
+    <div class="sidebar-content">
+      <ul>
+        <li>
+          <a class="side-nav-link"[routerLink]="['/home']">
+            <i class="material-icons">content_paste</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li>
+          <a class="side-nav-link" [routerLink]="['/angular-in-depth']">
+            <i class="material-icons">library_books</i>
+            <p>Angular Tutorials</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-content" [ngClass]="sidebarOpened && mode === 'push' ?
+  'open-push' : 'hidden-push'">
+  <router-outlet></router-outlet>
+</div>
