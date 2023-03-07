@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularDepthRoutingModule } from './angular-depth-routing.module';
 import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
-import { QuantityComponent } from './quantity/quantity.component';
+import { QuantityComponent } from './control-value-accessor/quantity/quantity.component';
 
 
 const material = [
