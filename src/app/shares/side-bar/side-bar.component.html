@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div class="drawer-content" [ngClass]="sidebarOpened && mode === 'push' ?
-  'open-push' : 'hidden-push'">
+<div class="drawer-content"
+  [ngClass]="sidebarOpened && mode === 'push' ? 'open-push' : ''">
   <router-outlet></router-outlet>
 </div>

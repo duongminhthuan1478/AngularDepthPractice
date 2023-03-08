@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  gap: 1rem;
+
+  .card {
+    width: 25%;
+    height: auto;
+
+    .card-img {
+      width: 100%;
+    }
+  }
+}

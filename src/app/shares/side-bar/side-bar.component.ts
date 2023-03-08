@@ -11,7 +11,7 @@ export class SideBarComponent {
 
   @Input() mode: SideBarMode = 'default';
 
-  sidebarOpened = true;
+  sidebarOpened = false;
 
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;

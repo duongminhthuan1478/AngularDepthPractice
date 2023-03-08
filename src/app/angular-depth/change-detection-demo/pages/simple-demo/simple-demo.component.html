@@ -1,0 +1,117 @@
+<div class="alert alert-warning" role="alert">
+  <strong>Note:</strong>
+  If a component is checked by ChangeDetector it is highlighted with a red
+  border
+</div>
+
+<div class="alert alert-primary" role="alert">
+  <strong>Component Tree</strong>
+  <ul>
+    <li>
+      <span>SimpleDemoComponent</span>
+      <ul>
+        <li>
+          <span>HeroCardComponent</span>
+          <ul>
+            <li> HeroDetailsComponent </li>
+          </ul>
+        </li>
+        <li>
+          <span> HeroCardOnPushComponent </span>
+          <ul>
+            <li> HeroDetailsComponent </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<mat-divider class="my-3"></mat-divider>
+
+<h2>Global Actions</h2>
+<div class="d-flex align-items-center gap-2">
+  <button mat-raised-button (click)="triggerSetTimeout()">
+    Trigger setTimeout
+  </button>
+
+  <button mat-raised-button
+    #ngZoneOutsideBtn
+    id="ngZoneOutsideBtn"
+    title="Check browser console for output">
+    Trigger outside Angular NgZone
+  </button>
+
+  <button mat-raised-button
+    title="triggers change detection for the whole application by respecting
+    the change detection strategy of a component"
+    (click)="triggerTick()">
+    Trigger ApplicationRef.tick()
+  </button>
+
+  <button mat-raised-button
+    title="Marks current view and all ancestors dirty."
+    (click)="triggerMarkForCheck()">
+    Trigger markForCheck()
+  </button>
+
+  <button mat-raised-button
+    (click)="triggerObservableTime()">
+    {{ timeSubscription ? 'Stop Observable Time' : 'Show Observable Time' }}
+  </button>
+  <p *ngIf="timeSubscription">{{ time | date: 'h:mm:ss' }}</p>
+</div>
+
+<mat-divider class="my-3"></mat-divider>
+
+<div class="section-add-hero">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Modify Heroes
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="hero-actions">
+      <button mat-raised-button color="primary" class="my-3"
+        (click)="addHero()">
+        Add Hero
+      </button>
+    </div>
+
+    <form *ngFor="let hero of heroes">
+      <div class="d-flex gap-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Hero name</mat-label>
+          <input matInput placeholder="Hero name" name="name"
+            [(ngModel)]="hero.name"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput placeholder="Hero ID" name="id"
+            [(ngModel)]="hero.id"
+            />
+        </mat-form-field>
+
+        <span class="h-100">
+          <button mat-raised-button
+            class="mt-2"(click)="createNewHero(hero.id)">
+            Create new object reference
+          </button>
+        </span>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</div>
+
+<mat-divider class="my-3"></mat-divider>
+<h2>ChangeDetectionStrategy.Default</h2>
+<div class="d-flex flex-wrap mb-3">
+  <thd-hero-card *ngFor="let hero of heroes" [hero]="hero"></thd-hero-card>
+</div>
+
+<h2>ChangeDetectionStrategy.OnPush</h2>
+<div class="d-flex flex-wrap mb-3">
+  <thd-hero-card-on-push *ngFor="let hero of heroes" [hero]="hero"></thd-hero-card-on-push>
+</div>
