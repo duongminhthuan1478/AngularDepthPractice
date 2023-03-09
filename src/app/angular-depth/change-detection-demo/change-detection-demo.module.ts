@@ -18,6 +18,7 @@ import { HeroDetailsComponent } from './components/hero-details/hero-details.com
 import { SimpleDemoComponent } from './pages/simple-demo/simple-demo.component';
 import { DetachDemoComponent } from './pages/detach-demo/detach-demo.component';
 import { ChangeDetectionBoardComponent } from './change-detection-board.component';
+import { ComplexDemoComponent } from './pages/complex-demo/complex-demo.component';
 
 const materials = [
   MatDividerModule,
@@ -37,6 +38,7 @@ const materials = [
     HeroDetailsComponent,
     HeroCardOnPushComponent,
     DetachDemoComponent,
+    ComplexDemoComponent,
   ],
   imports: [
     CommonModule,
