@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CardItemsComponent } from './../shares/card-items/card-items.component';
+import { CardItemsModule } from '../shares/card-items/card-items.module';
 
 import { AngularDepthRoutingModule } from './angular-depth-routing.module';
 import { AngularTutorialsComponent } from './angular-tutorials.component';
@@ -25,7 +25,6 @@ const material = [
     ControlValueAccessorComponent,
     QuantityComponent,
     AngularTutorialsComponent,
-    CardItemsComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +32,7 @@ const material = [
     AngularDepthRoutingModule,
     ReactiveFormsModule,
     ChangeDetectionDemoModule,
+    CardItemsModule,
     ...material,
   ]
 })

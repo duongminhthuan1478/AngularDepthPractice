@@ -1,10 +1,14 @@
+import { SimpleDemoComponent } from './pages/simple-demo/simple-demo.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChangeDetectionBoardComponent } from './components/change-detection-board/change-detection-board.component';
+import { ChangeDetectionBoardComponent } from './change-detection-board.component';
+import { DetachDemoComponent } from './pages/detach-demo/detach-demo.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'cd-board' },
-  { path: 'cd-board', component: ChangeDetectionBoardComponent }
+  { path: 'cd-board', component: ChangeDetectionBoardComponent },
+  { path: 'simple-demo', component: SimpleDemoComponent },
+  { path: 'detach-demo', component: DetachDemoComponent },
 ];
 
 @NgModule({

@@ -102,11 +102,16 @@
   padding-left: 1rem;
 }
 
-.sidebar-content ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 2rem;
+.sidebar-content {
+  max-height: calc(100vh - 65px - 100px);
+  overflow: auto;
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 2rem;
+  }
 }
 
 .sidebar-content li {
@@ -118,6 +123,11 @@
     color: lightcyan;
     box-shadow: none;
   }
+}
+
+.sidebar-content .submenu {
+  margin: 0;
+  padding: 0 16px;
 }
 
 .sidebar-content .side-nav-link {

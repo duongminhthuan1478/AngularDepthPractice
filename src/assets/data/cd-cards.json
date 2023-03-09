@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Simple demo",
+    "description": "How MarkForCheck(), Application.tick(), Detect Change work in Change Detection strategy",
+    "image": "assets/images/no-image.png",
+    "destination": "../simple-demo"
+  },
+  {
+    "title": "Detach vs Reattach",
+    "description": "Detaches this view from the change-detection tree. A detached view is not checked until it is reattached. Use in combination with detectChanges() to implement local change detection checks.",
+    "image": "assets/images/cd-detach-reattaches.png",
+    "destination": "../detach-demo"
+  }
+]

@@ -1,7 +1,7 @@
 <mat-card class="card" *ngFor="let item of listCards">
   <mat-card-header>
     <mat-card-title> {{ item.title }}</mat-card-title>
-    <mat-card-subtitle>
+    <mat-card-subtitle class="card-description" [title]="item.description">
       {{item.description}}
     </mat-card-subtitle>
   </mat-card-header>

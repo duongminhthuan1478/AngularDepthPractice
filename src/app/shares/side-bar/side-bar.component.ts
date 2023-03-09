@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MenuItem } from './models/menu-item.model';
 
 type SideBarMode = 'default' | 'push';
 
@@ -11,6 +12,23 @@ export class SideBarComponent {
 
   @Input() mode: SideBarMode = 'default';
 
+  public listMenu: MenuItem[] = [
+    {
+      label: 'Home',
+      icon: 'content_paste',
+      routerLink: '/home',
+    },
+    {
+      label: 'Angular Tutorials',
+      icon: 'library_books',
+      routerLink: '/angular-in-depth',
+      expanded: false,
+      items: [{
+        label: 'Change Detection',
+        routerLink: '/angular-in-depth/cd-board',
+      }]
+    }
+  ]
   sidebarOpened = false;
 
   toggleSidebar() {

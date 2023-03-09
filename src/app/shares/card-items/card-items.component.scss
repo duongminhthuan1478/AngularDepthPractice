@@ -1,13 +1,23 @@
 :host {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 
   .card {
     width: 25%;
-    height: auto;
+    max-height: auto;
+
+    .card-description {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
 
     .card-img {
       width: 100%;
+      height: 270px;
+      max-height: 270px;
     }
   }
 }
