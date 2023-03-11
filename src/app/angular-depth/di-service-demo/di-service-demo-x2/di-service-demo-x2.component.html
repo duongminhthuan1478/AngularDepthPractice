@@ -1,0 +1,13 @@
+ <h3 class="d-flex gap-3 align-items-center">
+  <span>Child X2 Component:</span>
+  <span class="text-primary">Counter: {{currentCounter$ | async}}</span>
+
+  <button mat-raised-button color="primary" (click)="count()">
+    +1
+  </button>
+</h3>
+
+
+<div class="alert alert-warning" role="alert">
+  <div>✔ No Provide level → share level provided with parent component</div>
+</div>

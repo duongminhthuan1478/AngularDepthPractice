@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'change-detection',
     loadChildren: () => import('./change-detection-demo/change-detection-demo.module').then(m => m.ChangeDetectionDemoModule)
-  }
+  },
+  {
+    path: 'di-service-demo',
+    loadChildren: () => import('./di-service-demo/di-service-demo.module').then(m => m.DiServiceDemoModule)
+  },
 ];
 
 @NgModule({

@@ -26,6 +26,9 @@ export class SideBarComponent {
       items: [{
         label: 'Change Detection',
         routerLink: '/angular-in-depth/cd-board',
+      }, {
+        label: 'DI Service',
+        routerLink: '/angular-in-depth/di-service-demo',
       }]
     }
   ]

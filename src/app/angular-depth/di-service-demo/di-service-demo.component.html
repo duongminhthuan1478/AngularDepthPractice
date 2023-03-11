@@ -1,0 +1,59 @@
+
+<section>
+  <h3 class="d-flex gap-3 align-items-center">
+    <span>Parent Component:</span>
+    <span class="text-primary accent">
+      Counter {{ currentCounter$ | async }}
+    </span>
+
+    <button mat-raised-button color="primary" (click)="count()">
+      +1
+    </button>
+  </h3>
+
+  <div class="alert alert-warning" role="alert">
+    <div>✔ Provide in component Level</div>
+    <div>✔ using injector to get Service (override component level → get
+      provided
+      from service)
+    </div>
+  </div>
+</section>
+
+
+<section class="my-3">
+  <thd-di-service-demo-x1> </thd-di-service-demo-x1>
+</section>
+
+<section class="my-3">
+  <thd-di-service-demo-x2> </thd-di-service-demo-x2>
+</section>
+
+<div class="alert alert-secondary note-text mt-5" role="alert">
+  <h2 class="text-primary">Note</h2>
+  <div>
+    - Inject service by constructor inject, injector.get(ServiceName),
+    providedIn with values such as 'root', 'any', 'platform' at service class
+  </div>
+  <div>
+    - If we intent to provide in smaller level, it will be create a new
+    instance
+    even though you have declared in service or inject any where before, look
+    at
+    the x1 component for detail
+  </div>
+
+  <h3 class="my-3">🔹 Constructor inject</h3>
+  <div> - Inject service irrelative to access modifier public/private,..</div>
+  <div> - Only relative with the level which you providedIn</div>
+
+  <h3 class="my-3">🔹 injector.get(ServiceName)</h3>
+  <div> - If you have providedIn the service that you has created, when using
+    this way
+    the instance that service will be created is the level that you have
+    provided
+  </div>
+  <div> - If you don't have providedIn level, root is default when using
+    injector.get(ServiceName), because providedIn default is the root level
+  </div>
+</div>
