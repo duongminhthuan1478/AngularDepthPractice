@@ -1,0 +1,50 @@
+<thd-card-items [listCards]="(cdCards$ | async)!"></thd-card-items>
+
+<mat-expansion-panel expanded="false" class="mt-5">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Reference document and The following illustrations shows the different
+      ChangeDetectorRef methods in a visual representation:
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="alert alert-warning">
+    <p>
+      ApplicationRef.tick() which triggers change detection for the whole
+      application by <strong> respecting the change detection strategy</strong>
+      of a component
+    </p>
+    <div>
+      Internally the AsyncPipe calls markForCheck each time a new value is
+      emitted
+    </div>
+  </div>
+
+  <img
+    width="95%"
+    src="assets/images/change-detector-ref.jpg"
+    alt="Change detector ref"
+  />
+
+  <div class="alert alert-primary mt-4">
+    <h3>References Document</h3>
+    <div>
+      <a
+        href="https://mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need"
+        >The Last Guide For Angular Change Detection You'll Ever Need
+      </a>
+    </div>
+
+    <div>
+      <a href="https://github.com/Mokkapps/angular-change-detection-demo">
+        The Last Guide For Angular Change Detection You'll Ever Need - GitHub
+      </a>
+    </div>
+
+    <div>
+      <a href="https://github.com/danielwiehl/edu-angular-change-detection">
+        Complex demo - GitHub
+      </a>
+    </div>
+  </div>
+</mat-expansion-panel>

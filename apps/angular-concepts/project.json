@@ -1,0 +1,112 @@
+{
+  "name": "angular-concepts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "apps/angular-concepts/src",
+  "prefix": "thd",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/angular-concepts",
+        "index": "apps/angular-concepts/src/index.html",
+        "main": "apps/angular-concepts/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular-concepts/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular-concepts/src/favicon.ico",
+          "apps/angular-concepts/src/assets"
+        ],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/angular-concepts/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["styles/base"]
+        },
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "angular-concepts:build:production"
+        },
+        "development": {
+          "browserTarget": "angular-concepts:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "angular-concepts:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "tsConfig": "apps/angular-concepts/tsconfig.spec.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular-concepts/src/favicon.ico",
+          "apps/angular-concepts/src/assets"
+        ],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/angular-concepts/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["styles/base"]
+        },
+        "scripts": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-concepts/**/*.ts",
+          "apps/angular-concepts/**/*.html"
+        ]
+      }
+    }
+  }
+}
