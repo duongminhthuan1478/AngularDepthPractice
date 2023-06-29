@@ -1,14 +1,13 @@
-# AngularInDepth
+# This is a workspace repositrory of Angular 15 with 2 application:
+1. Angular Concepts: This is application to practice which concepts in Angular in depth comprise DI system,  how CD strategy work, CVL...
+2. Course management application with CRUD and authen using Ngrx for state managements. With a server integrated
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development server: Looking for pakage.json for setups scripts
+1. nx serve angular-concepts
+2. course ngrx application
+- Server: npm run course-ngrx-server
+- web: npm run course-ngrx 
 
 ## Build
 

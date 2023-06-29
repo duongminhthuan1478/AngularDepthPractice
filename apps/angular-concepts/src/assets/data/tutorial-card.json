@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Control Value Accessor",
+    "description": "Defines an interface that acts as a bridge between the Angular forms API and a native element in the DOM.",
+    "image": "assets/images/cva.jpg",
+    "destination": "../control-value-accessor"
+  },
+  {
+    "title": "Change Detection Strategy",
+    "description": "The methods by which the updates to the component is tracked and component is triggered to Re-render",
+    "image": "assets/images/angular-cd-onpush.gif",
+    "destination": "../cd-board"
+  }
+]
